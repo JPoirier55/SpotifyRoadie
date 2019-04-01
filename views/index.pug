@@ -1,0 +1,12 @@
+extends layout
+
+block content
+  h1= title
+  if  !logged_in
+    p Please Login
+    div
+    a(class='btn btn-success' href='/auth/login') Login
+  div
+  a(class='btn btn-primary' href='/auth/refresh_token?refresh_token=' + refresh_token) Refresh
+  div
+  a(class='btn btn-danger' href='/auth/logout') Logout
